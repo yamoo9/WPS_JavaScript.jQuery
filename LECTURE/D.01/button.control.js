@@ -1,4 +1,4 @@
-/*! controll.js © yamoo9.net, 2016 */
+/*! button.control.js © yamoo9.net, 2016 */
 (function(){
   'use strict';
 
