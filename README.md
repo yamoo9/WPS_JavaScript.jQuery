@@ -14,8 +14,6 @@
 - jQuery Library
 - Performance
 
--
-
 ## Pre Survey
 
 [Level TEST](https://goo.gl/forms/pLEyqSuRuHcUq40C3)
