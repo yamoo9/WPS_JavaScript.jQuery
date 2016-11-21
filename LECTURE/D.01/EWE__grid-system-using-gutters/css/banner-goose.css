@@ -1,0 +1,77 @@
+html {
+  font-size: 10px;
+}
+body {
+  min-height: 100vh;
+}
+.banner-goose {
+  margin-top: 40px;
+  height: 340px;
+  background: #f95318;
+  font-family: "Roboto", Helvetica, Arial, Sans-Serif;
+  font-weight: 400;
+}
+.banner-goose-headline,
+.banner-goose-desc {
+  margin: 0; /* .banner-goose 내부 모든 요소의 공간 초기화 */
+}
+.banner-goose-image {
+  margin-left: 40px;
+  filter: grayscale(99%);
+  transition: all 1s ease-in-out;
+}
+.banner-goose-image:hover {
+  filter: grayscale(20%);
+}
+.banner-goose-headline {
+  margin-top: 60px;
+  color: #fff;
+  font-weight: 500;
+  font-size: 3.2rem;
+  letter-spacing: 0.1em; /* 100/1000 * 1em */
+  text-transform: uppercase; /* 모든 글자 대문자화 */
+}
+.banner-goose-desc {
+  margin-top: 20px;
+  color: #fff;
+  font-size: 1.4rem;
+  line-height: 1.714285714;
+}
+.banner-goose-CTA {
+  position: relative;
+  z-index: 0;
+  margin-top: 46px;
+  display: inline-block;
+  border: 1px solid #fb875e;
+  padding: 1.4166em 4em;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 1.2rem;
+  letter-spacing: 0.1em;
+  transition: color 0.2s;
+}
+
+.banner-goose-CTA:hover {
+  color: #fb875e;
+}
+.banner-goose-CTA:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px hsla(16, 95%, 74%, 0.8);
+}
+.banner-goose-CTA::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  top: 50%;
+  left: 0%;
+  right: 0%;
+  bottom: 50%;
+  background: #fff;
+  transition: all 0.2s ease-out;
+}
+.banner-goose-CTA:hover::before {
+  top: 0;
+  bottom: 0;
+}
