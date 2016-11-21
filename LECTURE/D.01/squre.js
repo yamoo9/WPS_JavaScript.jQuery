@@ -2,8 +2,6 @@
 (function(global, dom){
   'use strict';
 
-  console.log('dom:', dom);
-
   var utils = dom.utils;
 
   global.square = function(n) {
