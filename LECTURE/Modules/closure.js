@@ -16,8 +16,8 @@ var countDownInit = function(init_count) {
 var countDown10 = countDownInit(10);
 
 countDown10(); // 10
-countDown10(); // 9
-countDown10(); // 8
-countDown10(); // 7
-countDown10(); // 6
+countDown10(); //  9
+countDown10(); //  8
+countDown10(); //  7
+countDown10(); //  6
 
