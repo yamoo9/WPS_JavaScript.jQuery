@@ -7,6 +7,14 @@
   var bgm = new Audio();
   bgm.setAttribute('src', './media/Warm Vibes.mp3');
 
+  var playMusic = function() {
+    bgm.play();
+  };
+  var stopMusic = function() {
+    bgm.pause();
+    bgm.currentTime = 0;
+  };
+
   var doc = global.document;
   // .shuffle-container 변수에 참조
   var container = doc.querySelector('.shuffle-container');
@@ -31,13 +39,6 @@
     // 기능을 분리하여 로직을 만든 후 처리하는 코드는 아래와 같다.
     addClass(disk, 'animate');
     playMusic();
-  };
-  var playMusic = function() {
-    bgm.play();
-  };
-  var stopMusic = function() {
-    bgm.pause();
-    bgm.currentTime = 0;
   };
   var stopDisk = function(e) {
     removeClass(disk, 'animate');
