@@ -47,6 +47,8 @@ body {
   top: 44%;
   left: 60%;
   transform: scale(0.7) translate(-50%, -50%) rotate(0deg);
+}
+.shuffle-album-disk.animate {
   animation: rotateInfinite 8s linear infinite;
 }
 .shuffle-album-cover {
