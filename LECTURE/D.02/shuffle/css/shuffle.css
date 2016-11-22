@@ -46,10 +46,20 @@ body {
 .shuffle-album-disk {
   top: 44%;
   left: 60%;
-  transform: scale(0.7) translate(-50%, -50%) rotate(130deg);
+  transform: scale(0.7) translate(-50%, -50%) rotate(0deg);
+  animation: rotateInfinite 8s linear infinite;
 }
 .shuffle-album-cover {
   top: 43%;
-  left: 45%;
+  left: 42%;
   transform: scale(0.7) translate(-50%, -50%);
+}
+
+/**
+ * --------------------------------
+ * 애니메이션 키프레임 설정
+ * ----------------------------- */
+@keyframes rotateInfinite {
+  0% { transform: scale(0.7) translate(-50%, -50%) rotate(0deg); }
+  100% { transform: scale(0.7) translate(-50%, -50%) rotate(360deg); }
 }
