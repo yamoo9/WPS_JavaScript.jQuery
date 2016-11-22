@@ -28,7 +28,7 @@
   - 데이터 유형 별, 별칭(Alias) 함수
 - IIFE를 활용한 모듈/노출 패턴
 
-##### 모듈 패턴
+##### [모듈 패턴](https://toddmotto.com/mastering-the-module-pattern/#revealing-module-pattern)
 
 ```js
 /*! understanding_module.js © yamoo9.net, 2016 */
