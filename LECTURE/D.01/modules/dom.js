@@ -12,4 +12,4 @@
   // global.dom = _dom;
   dom.version = _dom.version;
 
-})(this, (this.dom = this.dom || {}) );
+})(this, (dom = dom || {}) );
