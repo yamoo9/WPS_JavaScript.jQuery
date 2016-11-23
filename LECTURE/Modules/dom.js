@@ -8,7 +8,67 @@ var dom = (function(global){
   var toString = Object.prototype.toString;
 
   // --------------------------------------------------------------
+  // 인스턴스 메소드
+  var hasClass, addClass, removeClass, toggleClass, radioClass;
+
+  // hasClass = (el_node, check_class_name) => {
+  //   if ( 'classList' in Element.prototype ) {
+  //     return el_node.classList.contains(check_class_name);
+  //   } else {
+  //     let reg = new RegExp(`(^|\\s+)${check_class_name}($|\\s+)`);
+  //     let current_class = el_node.getAttribute('class');
+  //     return reg.test(current_class);
+  //   }
+  // };
+
+  if ( 'classList' in Element.prototype ) {
+    hasClass = (el_node, check_class_name) => {
+      return el_node.classList.contains(check_class_name);
+    };
+  } else {
+    hasClass = (el_node, check_class_name) => {
+      let reg = new RegExp(`(^|\\s+)${check_class_name}($|\\s+)`);
+      let current_class = el_node.getAttribute('class');
+      return reg.test(current_class);
+    };
+  }
+
+  addClass = (el_node, add_class_name) => {
+    el_node.classList.add(add_class_name);
+    // if ( !hasClass(el_node, add_class_name) ) {
+    //   let current_class = el_node.getAttribute('class') || '';
+    //   el_node.setAttribute('class', trim(`${current_class} ${add_class_name}`));
+    // }
+  };
+
+  removeClass = (el_node, remove_class_name) => {
+    el_node.classList.remove(remove_class_name);
+    // if ( !remove_class_name ) { el_node.setAttribute('class', ''); }
+    // if ( hasClass(el_node, remove_class_name) ) {
+    //   var reg = new RegExp(`(^|\\s+)${remove_class_name}($|\\s+)`);
+    //   var changed_class = el_node.getAttribute('class').replace(reg, '');
+    //   el_node.setAttribute('class', changed_class);
+    // }
+  };
+
+  toggleClass = (el_node, toggle_class_name) => {
+    el_node.classList.toggle(toggle_class_name);
+    // hasClass(el_node, toggle_class_name) ?
+    //   removeClass(el_node, toggle_class_name) :
+    //   addClass(el_node, toggle_class_name);
+  };
+
+  // --------------------------------------------------------------
   // 유틸리티 메소드
+  var trimLeft = function(str){
+    return str.replace(/^\s+/,'');
+  };
+  var trimRight = function(str){
+    return str.replace(/\s+$/,'');
+  };
+  var trim = function(str) {
+    return trimLeft(trimRight(str));
+  };
   var type = function (data) {
     return toString.call(data).toLowerCase().slice(8,-1);
   };
@@ -55,15 +115,30 @@ var dom = (function(global){
   // --------------------------------------------------------------
   // 모듈 배포
   return {
-    'version'    : '0.0.1',
-    'type'       : type,
-    'isNumber'   : isNumber,
-    'isString'   : isString,
-    'isBoolean'  : isBoolean,
-    'isFunction' : isFunction,
-    'isArray'    : isArray,
-    'isObject'   : isObject,
-    'validate'   : validate,
+    'version'       : '0.0.1',
+    'type'          : type,
+    'isNumber'      : isNumber,
+    'isString'      : isString,
+    'isBoolean'     : isBoolean,
+    'isFunction'    : isFunction,
+    'isArray'       : isArray,
+    'isObject'      : isObject,
+    'isEmptyObject' : isEmptyObject,
+    'validate'      : validate,
+    'trim'          : trim,
+    // 'trimLeft'      : trimLeft,
+    // 'trimRight'     : trimRight,
+    'hasClass'      : hasClass,
+    'addClass'      : addClass,
+    'removeClass'   : removeClass,
+    'toggleClass'   : toggleClass,
   };
 
 })(this);
+
+// // ES6 (2015)
+// {
+//   let addClass = function(){};
+//   let dom = {'addClass': addClass};
+//   window.dom = dom;
+// }
