@@ -26,4 +26,25 @@
 // .querySelectorAll()
 // .classList
 
-console.dir(dom);
+// <html>
+var html = document.documentElement;
+    html = document.getElementsByTagName('html')[0];
+    html = document.querySelector('html');
+// <head>
+var head = document.head;
+    head = document.getElementsByTagName('head')[0];
+    head = document.querySelector('head');
+// <body>
+var body = document.body;
+    body = document.getElementsByTagName('body')[0];
+    body = document.querySelector('body');
+
+var my_p = document.getElementsByTagName('p'); // Nodelist, Like Array Object
+    my_p = document.querySelector('p');
+// console.log(my_p);
+
+// var my_strong = my_p.firstChild;
+var my_strong = my_p.firstElementChild;
+console.log(my_strong);
+
+dom.addClass(my_strong, 'power');

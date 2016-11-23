@@ -59,6 +59,35 @@ var dom = (function(global){
   };
 
   // --------------------------------------------------------------
+  // style 제어
+
+  var getStyle, setStyle, css;
+  // [W3C Standard] IE 9+, Modern Web Browsers
+  if ( global.getComputedStyle ) {
+    getStyle = function(el_node, prop_name) {
+      return global.getComputedStyle(el_node,null)[prop_name];
+    };
+  }
+  // [Only MS IE] IE 8-
+  else {
+    getStyle = function(el_node, prop_name) {
+      return el_node.currentStyle[prop_name];
+    };
+  }
+
+  function setStyle(el_node, prop_name, value) {
+    el_node.style[prop_name] = value;
+  }
+
+  function css( el_node, prop_name, value ) {
+    if ( !value ) {
+      return getStyle(el_node, prop_name);
+    } else {
+      setStyle(el_node, prop_name, value);
+    }
+  }
+
+  // --------------------------------------------------------------
   // 유틸리티 메소드
   var trimLeft = function(str){
     return str.replace(/^\s+/,'');
@@ -132,6 +161,7 @@ var dom = (function(global){
     'addClass'      : addClass,
     'removeClass'   : removeClass,
     'toggleClass'   : toggleClass,
+    'css'           : css,
   };
 
 })(this);
