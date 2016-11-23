@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta charset="UTF-8">
+  <title>jQuery를 사용해봅시다.</title>
+  <script src="../../Modules/jquery-3.1.1.js"></script>
+  <script>
+  // jQuery + JavaScript + DOM
+
+  // jQuery 팩토리 함수(Factory Function)
+  // DOM Object
+  // CSS Selector
+  // HTML String
+  // Array, Object, Function
+  // jQuery Instance
+
+  jQuery(document).ready(function() {
+    // jQuery( document.querySelector('.cup') )
+    var $cup = jQuery( '.cup' );
+    console.log($cup); // jQuery Instance
+
+    $cup.addClass('cup-full');
+  });
+  </script>
+</head>
+<body>
+
+  <div class="cup">cup</div>
+
+</body>
+</html>
