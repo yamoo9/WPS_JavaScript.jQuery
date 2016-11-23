@@ -4,7 +4,14 @@
   <meta http-equiv="X-UA-Compatible" content="IE=Edge">
   <meta charset="UTF-8">
   <title>jQuery를 사용해봅시다.</title>
+  <style>
+    .active {
+      background: #ff0;
+    }
+  </style>
   <script src="../../Modules/jquery-3.1.1.js"></script>
+  <script src="../../Modules/jquery.cache.js"></script>
+  <script src="../../Modules/jquery.radioClass.js"></script>
   <script>
   // jQuery + JavaScript + DOM
 
@@ -14,13 +21,23 @@
   // HTML String
   // Array, Object, Function
   // jQuery Instance
-
+  // Ready Instance Method
   jQuery(document).ready(function() {
     // jQuery( document.querySelector('.cup') )
     var $cup = jQuery( '.cup' );
-    console.log($cup); // jQuery Instance
+    // console.log($cup); // jQuery Instance
 
-    $cup.addClass('cup-full');
+    $cup
+      .addClass('cup-full')
+      .removeClass('cup')
+      .toggleClass('hey')
+      .on('click', function() {
+        // console.log('this:', this);
+        // console.log('jQuery(this):', jQuery(this).jquery );
+        // this.classList.add('clicked');
+        // $(this).addClass('clicked');
+        $.$(this, '$this').addClass('clicked');
+      });
   });
   </script>
 </head>
@@ -28,5 +45,34 @@
 
   <div class="cup">cup</div>
 
+  <nav>
+    <a href="">link</a>
+    <a href="">link</a>
+    <a href="">link</a>
+    <a href="">link</a>
+  </nav>
+
+<script>
+(function(global, $){
+  'use strict';
+
+  var $nav = $('nav');
+  var $nav_links = $('a', $nav);
+
+  $nav_links.on('click', function(e) {
+    e.preventDefault();
+    // $(e.target).addClass('target');
+    $.$(e.target, '$this').radioClass('active').toggleClass('awesome');
+  });
+
+  // $.each($nav_links, function(index, link){
+  //   var $link = $nav_links.eq(index);
+  //   $link.on('click', function() {
+  //     $link.addClass('target');
+  //   });
+  // });
+
+})(this, jQuery);
+</script>
 </body>
 </html>
