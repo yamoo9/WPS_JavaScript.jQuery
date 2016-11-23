@@ -43,8 +43,8 @@ var my_p = document.getElementsByTagName('p'); // Nodelist, Like Array Object
     my_p = document.querySelector('p');
 // console.log(my_p);
 
-// var my_strong = my_p.firstChild;
-var my_strong = my_p.firstElementChild;
+// var my_strong = my_p.firstChild; // find node
+var my_strong = my_p.firstElementChild; // find element node
 console.log(my_strong);
 
 dom.addClass(my_strong, 'power');
