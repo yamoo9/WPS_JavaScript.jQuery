@@ -1,0 +1,15 @@
+{
+  "name": "jquery-carousel-component",
+  "version": "1.0.0",
+  "description": "jQuery 캐러셀 컴포넌트 플러그인 제작",
+  "dependencies": {
+    "jquery": "^3.1.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "sass": "node-sass -w -r ./sass -o ./css --ouput-style compressed --source-map ./css"
+  },
+  "keywords": ["jQuery"],
+  "author": "yamoo9 <yamoo9@naver.com>",
+  "license": "ISC"
+}

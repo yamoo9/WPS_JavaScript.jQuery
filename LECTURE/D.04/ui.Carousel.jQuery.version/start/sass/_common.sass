@@ -1,0 +1,45 @@
+%focus-state
+  outline: none
+  outline-offset: 10px
+  box-shadow: 0 0 0 4px rgba(#5aceff, 0.45)
+  border-radius: 2px
+
+%reset-list
+  list-style: none
+  margin:
+    top: 0
+    bottom: 0
+  padding-left: 0
+
+%reset-button
+  border: none
+  padding: 0
+  background: transparent
+
+.readable-hidden
+  overflow: hidden
+  position: absolute
+  clip:     rect(0,0,0,0)
+  width:    1px
+  height:   1px
+  margin:   -1px
+  border:   0
+  padding:  0
+  &.focusable:focus
+    overflow: visible
+    position: static
+    clip:     auto
+    width:    auto
+    height:   auto
+    margin:   0
+
+=link($color)
+  color: $color
+  text-decoration: none
+
+=circle($size: 10px, $color: currentColor)
+  display: block
+  width: $size
+  height: $size
+  border-radius: 50%
+  background: $color

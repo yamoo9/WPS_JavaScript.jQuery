@@ -1,0 +1,179 @@
+@charset "UTF-8";
+/*! ui-carousel.css © yamoo9.net, 2016 */
+@font-face {
+  font-family: "Nova Thin";
+  src: url("../fonts/proximanova-thin-webfont.woff") format("woff"); }
+
+@font-face {
+  font-family: "Nova Regular";
+  src: url("../fonts/proximanova-regular-webfont.woff") format("woff"); }
+
+@font-face {
+  font-family: "Nova Bold";
+  src: url("../fonts/proximanova-bold-webfont.woff") format("woff"); }
+
+.ui-carousel-tablist .ui-carousel-tab:focus, .ui-carousel-button-group button:focus {
+  outline: none;
+  outline-offset: 10px;
+  box-shadow: 0 0 0 4px rgba(90, 206, 255, 0.45);
+  border-radius: 2px; }
+
+.ui-carousel-tablist ul {
+  list-style: none;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0; }
+
+.ui-carousel-button-group button {
+  border: none;
+  padding: 0;
+  background: transparent; }
+
+.readable-hidden {
+  overflow: hidden;
+  position: absolute;
+  clip: rect(0, 0, 0, 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0; }
+  .readable-hidden.focusable:focus {
+    overflow: visible;
+    position: static;
+    clip: auto;
+    width: auto;
+    height: auto;
+    margin: 0; }
+
+body {
+  margin: 0;
+  font-family: "Nova Regular";
+  color: #2b2b2b;
+  background: #fff;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+::selection {
+  background: #ebc9c7;
+  color: #4f1e19; }
+
+.ui-carousel {
+  overflow: hidden;
+  position: relative;
+  flex: 0 1 1200px;
+  height: 700px;
+  background: #fff;
+  margin-left: auto;
+  margin-right: auto; }
+  @media screen and (min-width: 660px) {
+    .ui-carousel {
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+      border: 1px solid rgba(43, 43, 43, 0.2); } }
+
+.ui-carousel-headline {
+  position: absolute;
+  z-index: 1000;
+  left: 30px;
+  top: -3px;
+  width: 10em;
+  margin: 0;
+  font-family: "Nova Thin";
+  font-size: 14px;
+  line-height: 1.34;
+  color: #ac807a; }
+  @media screen and (min-width: 660px) {
+    .ui-carousel-headline {
+      top: 30px; } }
+
+.ui-carousel-tablist {
+  position: absolute;
+  z-index: 1000;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: none; }
+  @media screen and (min-width: 660px) {
+    .ui-carousel-tablist {
+      display: block; } }
+  .ui-carousel-tablist ul {
+    display: flex;
+    justify-content: center; }
+  .ui-carousel-tablist li {
+    margin-left: 8px;
+    margin-right: 8px; }
+    .ui-carousel-tablist li.active .ui-carousel-tab {
+      position: relative;
+      top: -1px;
+      background: #fff;
+      border: 1px solid #5aceff;
+      box-shadow: inset 0 0 10px rgba(90, 206, 255, 0.3); }
+  .ui-carousel-tablist .ui-carousel-tab {
+    color: #999999;
+    text-decoration: none;
+    display: block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: currentColor; }
+    .ui-carousel-tablist .ui-carousel-tab:focus {
+      border-radius: 50%; }
+    .ui-carousel-tablist .ui-carousel-tab:hover {
+      color: #44ace2; }
+
+.ui-carousel-button-group button {
+  cursor: pointer;
+  opacity: 0.45;
+  position: absolute;
+  z-index: 1000;
+  top: 50%;
+  width: 30px;
+  height: 60px;
+  transform: translateY(-50%); }
+  .ui-carousel-button-group button:hover {
+    opacity: 1; }
+  .ui-carousel-button-group button::before {
+    content: '';
+    position: absolute;
+    width: 40px;
+    height: 40px; }
+
+.ui-carousel-button-group .ui-carousel-prev-button {
+  left: 20px; }
+  .ui-carousel-button-group .ui-carousel-prev-button::before {
+    top: 10px;
+    left: 10px;
+    transform: rotate(-45deg);
+    border-top: 1px solid rgba(43, 43, 43, 0.7);
+    border-left: 1px solid rgba(43, 43, 43, 0.7); }
+
+.ui-carousel-button-group .ui-carousel-next-button {
+  right: 20px; }
+  .ui-carousel-button-group .ui-carousel-next-button::before {
+    top: 10px;
+    right: 10px;
+    transform: rotate(45deg);
+    border-top: 1px solid rgba(43, 43, 43, 0.7);
+    border-right: 1px solid rgba(43, 43, 43, 0.7); }
+
+.ui-carousel-tabpanel-wrapper {
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  text-align: center; }
+  .ui-carousel-tabpanel-wrapper img {
+    margin-top: 30px;
+    width: 50%;
+    height: auto; }
+
+.ui-carousel-tabpanel {
+  margin: 0;
+  float: left;
+  width: 100%; }
+
+/*# sourceMappingURL=ui-carousel.css.map */

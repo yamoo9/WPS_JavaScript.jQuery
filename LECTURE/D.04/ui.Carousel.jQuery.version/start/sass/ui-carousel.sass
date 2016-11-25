@@ -1,0 +1,155 @@
+/*! ui-carousel.css © yamoo9.net, 2016 */
+
+// ----------------------------------------------------
+// variables
+$bg-color: #fff
+$fg-color: #2b2b2b
+$carousel-tab: #999999
+$bp: 660px
+
+// ----------------------------------------------------
+// webfonts
+@import fonts
+
+// ----------------------------------------------------
+// common module
+@import common
+
+// ----------------------------------------------------
+// default style
+html
+  // overflow: hidden
+body
+  margin: 0
+  font-family: "Nova Regular"
+  color: $fg-color
+  background: $bg-color
+  height: 100vh
+  display: flex
+  justify-content: center
+  align-items: center
+
+::selection
+  background: #ebc9c7
+  color: #4f1e19
+
+// ----------------------------------------------------
+// ui-carousel
+.ui-carousel
+  overflow: hidden
+  position: relative
+  flex: 0 1 1200px
+  // width: 1200px
+  height: 700px
+  background: $bg-color
+  margin:
+   left: auto
+   right: auto
+  @media screen and (min-width: $bp)
+    box-shadow: 0 0 10px hsla(0,0%,0%,.15)
+    border: 1px solid rgba($fg-color, 0.2)
+
+.ui-carousel-headline
+  // @extend .readable-hidden
+  position: absolute
+  z-index: 1000
+  left: 30px
+  top: -3px
+  width: 10em
+  margin: 0
+  font:
+    family: "Nova Thin"
+    size: 14px
+  line-height: 1.34
+  color: #ac807a
+  @media screen and (min-width: $bp)
+    top: 30px
+
+.ui-carousel-tablist
+  position: absolute
+  z-index: 1000
+  bottom: 30px
+  left: 50%
+  transform: translateX(-50%)
+  display: none
+  @media screen and (min-width: $bp)
+    display: block
+  ul
+    @extend %reset-list
+    display: flex
+    justify-content: center
+  li
+    margin:
+      left: 8px
+      right: 8px
+    &.active .ui-carousel-tab
+      position: relative
+      top: -1px
+      background: #fff
+      border: 1px solid #5aceff
+      box-shadow: inset 0 0 10px rgba(#5aceff, 0.3)
+  .ui-carousel-tab
+    +link($carousel-tab)
+    +circle()
+    &:focus
+      @extend %focus-state
+      border-radius: 50%
+    &:hover
+      color: #44ace2
+
+.ui-carousel-button-group
+  button
+    @extend %reset-button
+    cursor: pointer
+    opacity: 0.45
+    position: absolute
+    z-index: 1000
+    top: 50%
+    width: 30px
+    height: 60px
+    transform: translateY(-50%)
+    &:hover
+      opacity: 1
+    &:focus
+      @extend %focus-state
+    &::before
+      content: ''
+      position: absolute
+      width: 40px
+      height: 40px
+  .ui-carousel-prev-button
+    left: 20px
+    &::before
+      top: 10px
+      left: 10px
+      transform: rotate(-45deg)
+      border:
+        top: 1px solid rgba($fg-color, 0.7)
+        left: 1px solid rgba($fg-color, 0.7)
+  .ui-carousel-next-button
+    right: 20px
+    &::before
+      top: 10px
+      right: 10px
+      transform: rotate(45deg)
+      border:
+        top: 1px solid rgba($fg-color, 0.7)
+        right: 1px solid rgba($fg-color, 0.7)
+
+.ui-carousel-tabpanel-wrapper
+  overflow: hidden
+  position: absolute
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  text-align: center
+  img
+    margin-top: 30px
+    width: 50%
+    height: auto
+
+.ui-carousel-tabpanel
+  margin: 0
+  float: left
+  width: 100%
