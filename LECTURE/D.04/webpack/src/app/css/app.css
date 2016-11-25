@@ -1,0 +1,18 @@
+/*! app.css © yamoo9.net, 2016 */
+html {
+  overflow-y: scroll;
+  font-size: 10px;
+}
+
+body {
+  margin: 5rem 10rem;
+  font-size: 1.6rem;
+  color: #ffffff;
+  background: #fe4940;
+}
+
+body *,
+body *::before,
+body *::after {
+  box-sizing: border-box;
+}

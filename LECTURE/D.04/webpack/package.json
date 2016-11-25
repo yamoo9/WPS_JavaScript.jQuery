@@ -1,0 +1,26 @@
+{
+  "name": "webpack-start-kit",
+  "version": "1.0.0",
+  "description": "Webpack 프로젝트 스타트 킷 제작 실습",
+  "scripts": {
+    "start": "webpack -d src/app/app.js src/bundle.js",
+    "watch": "webpack -w -d src/app/app.js src/bundle.js",
+    "build": "webpack -p src/app/app.js src/bundle.js"
+  },
+  "keywords": [
+    "webpack",
+    "babel",
+    "ECMAScript 2015",
+    "Sass"
+  ],
+  "author": "yamoo9",
+  "devDependencies": {
+    "css-loader": "^0.26.0",
+    "jquery": "^3.1.1",
+    "jquery.easing": "^1.4.1",
+    "node-sass": "^3.13.0",
+    "sass-loader": "^4.0.2",
+    "style-loader": "^0.13.1",
+    "webpack": "^1.13.3"
+  }
+}

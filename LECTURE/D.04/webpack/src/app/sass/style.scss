@@ -1,0 +1,21 @@
+/*! app.scss © yamoo9.net, 2016 */
+
+$root-font-size: 20px;
+
+html {
+  overflow-y: scroll;
+  font-size: $root-font-size;
+}
+
+body {
+  margin: 5 * $root-font-size 10 * $root-font-size;
+  font-size: $root-font-size * 1.6;
+  color: #ffffff;
+  background: #fe4940;
+}
+
+body *,
+body *::before,
+body *::after {
+  box-sizing: border-box;
+}
